@@ -34,6 +34,28 @@ class DataProprocesser():
         data = pd.concat([data, df_new], axis=1)
         print(data)
         data.to_csv(self.data_dir + 'meibi_data.csv', index=False)
+    # TODO:wash data-----start-----柯柯小仙女
+    def wash_sanfen(self):
+        # ready
+        return None
+
+    def wash_zhexia(self):
+        # ready
+        return None
+
+    def wash_fendiye(self):
+        return None
+
+    def wash_saihong(self):
+        return None
+
+    def wash_yanying(self):
+        return None
+
+    def wash_kouhong(self):
+        return None
+
+    # TODO:wash data-----end-----柯柯小仙女
 
 
 

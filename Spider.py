@@ -100,4 +100,4 @@ class mySpider():
 spider = mySpider()
 
 # spider.get_list()
-spider.get_detail(categorys=['kouhong','fendiye','saihong','xiangshui','yanying'])
+spider.get_detail(categorys=['zhexia'])
