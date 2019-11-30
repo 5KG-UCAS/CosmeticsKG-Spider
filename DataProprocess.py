@@ -20,21 +20,26 @@ class DataProprocesser():
 
     def wash_xiangshui(self):
         data = self.data['xiangshui']
+        # VERSACE/范思哲 晶钻女士（粉钻）香水 50ml
+        patt = r'^(?P<engName>.*)/(?P<chiName>[ ]?[^ ]+) (?P<Name>.+)[ /](?P<size>\d+)[ml,ML]?'
+        df_new = data['goods_name'].str.extract(patt,expand=True)
+        data = pd.concat([data,df_new], axis=1)
+        data.to_csv(self.data_dir+'xiangshui_data.csv',index =False)
+
+    def wash_meibi(self):
+        data = self.data['meibi']
+        # shu uemura/植村秀 经典砍刀眉笔
+        patt = r'^(?P<engName>.*)/(?P<chiName>[ ]?[^ ]+) (?P<Name>.+)'
+        df_new = data['goods_name'].str.extract(patt, expand=True)
+        data = pd.concat([data, df_new], axis=1)
+        print(data)
+        data.to_csv(self.data_dir + 'meibi_data.csv', index=False)
+
 
 
 
 dp = DataProprocesser()
-# dp.wash_xiangshui(
-an = dp.data['xiangshui']['goods_name'].to_list()
-reg = re.compile('^(?P<engName>.*)/(?P<chiName>.+) (?P<Name>.+) (?P<size>\d+ml)$')
-num = 0
-for str in an:
-    regMatch = reg.match(str)
-
-    if regMatch:
-        print(regMatch.groupdict())
-        num += 1
-    else:
-        print('Error in '+str)
-
-print(num/len(an))
+dp.wash_meibi()
+# brand = dp.data['xiangshui'][['engName','chiName']]
+# brand = brand.drop_duplicates()
+# brand.to_csv(dp.data_dir+'brand.csv',index = False)
