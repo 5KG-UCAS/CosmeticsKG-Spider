@@ -34,7 +34,7 @@ class DataProprocesser():
         data = pd.concat([data, df_new], axis=1)
         print(data)
         data.to_csv(self.data_dir + 'meibi_data.csv', index=False)
-    # TODO:wash data-----start-----柯柯小仙女
+    # TODO:wash data-----start-----珂珂小仙女
     def wash_sanfen(self):
         # ready
         return None
@@ -50,12 +50,13 @@ class DataProprocesser():
         return None
 
     def wash_yanying(self):
+        # 先不弄
         return None
 
     def wash_kouhong(self):
         return None
 
-    # TODO:wash data-----end-----柯柯小仙女
+    # TODO:wash data-----end-----珂珂小仙女
 
 
 
