@@ -88,7 +88,7 @@ class mySpider():
                 goods_detail_list = rsl['data']['goods_attr']
                 for goods in goods_detail_list:
                     id = goods['id']
-                    for attr in ['goods_name', 'attr_name', 'example_img', 'counter_price', 'xinxin_price', 'bid_price_min']:
+                    for attr in ['attr_name', 'example_img', 'counter_price', 'xinxin_price', 'bid_price_min']:
                         df.loc[df['id'] == id,attr] = goods[attr]
 
 
@@ -99,5 +99,5 @@ class mySpider():
 
 spider = mySpider()
 
-# spider.get_list()
-spider.get_detail(categorys=['zhexia'])
+spider.get_list()
+spider.get_detail(categorys=['kouhong','fendiye','meibi','saihong','sanfen','zhexia',])
